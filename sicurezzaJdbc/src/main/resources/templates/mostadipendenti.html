@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Thymeleaf utilizzo del Model And View</title>
+</head>
+
+<body>
+
+<p th:text= "${localDate}"  />
+<p th:text="${localTime}"  />
+<p> Dipendenti estratti </p>
+
+
+<tr th:each="impiegati : ${impiegatiList}">
+	<td th:text="${impiegati.id}">1</td>
+	<td><a href="#" th:text="${impiegati.cognome}">cognome ...</a></td>
+	<td th:text="${impiegati.eta}">eta ...</td>
+	<br>
+</tr>
+<h3><span>Dipendenti estratti</span></h3>
+<table>
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>cognome</th>
+		<th>Eta</th>
+		<th>stipentio</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="impiegato : ${impiegatiList}">
+		<td th:text="${impiegato.id}"></td>
+		<td th:text="${impiegato.cognome}"></td>
+		<td th:text="${impiegato.eta}"></td>
+		<td th:text="${impiegato.stipendio}"></td>
+	</tr>
+	</tbody>
+</table>
+</body>
+</html>
+<!--<table class="table">
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>Cognome</th>
+		<th>Età</th>
+		<th>Stipendio</th>
+
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="impiegato : ${listaImpiegati}">
+		<td th:text="{impiegato.id}"></td>
+		<td th:text="{impiegato.cognome}"></td>
+		<td th:text="{impiegato.eta}"></td>
+		<td th:text="{impiegato.stipendio}"></td>
+	</tr>
+	</tbody>
+</table>-->
